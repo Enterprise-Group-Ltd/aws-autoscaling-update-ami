@@ -55,7 +55,7 @@ This utility produces a summary report listing:
   * aws autoscaling describe-auto-scaling-groups
   * aws autoscaling describe-launch-configurations
   * aws autoscaling update-auto-scaling-group
-  * aws ec2 describe-images (used to test region)
+  * aws ec2 describe-images (used to test AMI)
   * aws iam list-account-aliases (used to pull AWS account alias)
   * aws sts get-caller-identity (used to pull AWS acount)
 
