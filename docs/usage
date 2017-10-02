@@ -1,0 +1,72 @@
+
+--------------------------------------- Autoscaling update AMI utility usage ---------------------------------------- 
+
+This utility updates targeted AWS Autoscale EC2 Launch Configurations and Autoscaling Groups with a new AMI    
+
+This script will:  
+* Update AWS Autoscaling Launch Configurations to use a new AMI  
+* Update Launch Configuration names to reflect the new version  
+* Create new Launch Configurations using the updated configurations  
+* Delete prior Launch Configuration versions  
+* Update all related Autoscaling Groups to use the new Launch Configurations  
+
+--------------------------------------------------------------------------------------------------------------------- 
+
+Usage: 
+      autoscaling-update-ami.sh -p AWS_CLI_profile -n new_AMI_ID_or_name -t old_target_AMI_ID_or_name -a append-text  
+  
+      Optional parameters: -d 3 -m f -v y  
+
+Where:  
+ -p - Name of the AWS CLI cli_profile (i.e. what you would pass to the --profile parameter in an AWS CLI command) 
+        Example: -p myAWSCLIprofile  
+
+ -n - New AMI ID or the name unique string. For the name: A string that uniquely identifies the new AMI name.  
+      This can be the entire new AMI name or any subset of the name that uniquely identifies it.  
+
+ -t - Old, target AMI ID or the name unique string. For the name: A string that uniquely identifies the old, target   
+      AMI name that you need to update. This can be the entire old, target AMI name or any subset of the name  
+      that uniquely identifies it. 
+
+      Note: The new and old AMI inputs must both be AMI names or AMI IDs  
+
+      Examples using AMI names: 
+        Example: -n act123456789999_worker_v432_2017_11_23_1302_utc  
+        Example: -t act123456789999_worker_v321_2016_04_30_1845_utc  
+
+      Examples using AMI IDs: 
+        Example: -n ami-ab7874d1  
+        Example: -t ami-c5636fde  
+
+ -a - Text to append to the new launch config name. The append text will begin after the first occurance of  
+      the dash character '-' when it is followed by a v and a number or when it is followed by a year number.  
+      The append text will begin at the v in this example: -vNNNN (where NNNN is any number).  
+      The append text will begin at the Y in this example -YYYY (where YYYY is a year, e.g. 2017)  
+      The utility will default to append the current date as: -YYYY-MM-DD-HHMM-utc 
+         >> Note: The append text cannot contain the characters:  \` ~ ' ! # ^ \* \  () {} [] <> $ % @ & = + \\ /  << 
+        Example: -a v32-2017-08-21-1845-utc   produces: my-launch-config-existing-text-v32-2017-08-21-1845-utc  
+        Example: -a 2017-08-21-1845-utc       produces: my-launch-config-existing-text-2017-08-21-1845-utc  
+
+ -s - Security Group ID to add to all launch configurations. 
+        Example: -s sg-9612f4e3  
+
+ -d - Delete versions older than X. Set to the number of versions to retain. Setting to 3 will retain three prior versions. 
+      Note: this flag assumes the following Launch Configuration Name syntax: My-Launch-Configuration-Name-vXX-Anything-Else 
+      Where 'XX' is equal to any number of decimals, e.g. 45, 456, 4567890. Decimal places are not supported, e.g. 10.00.23 
+        Example: -d 3  
+
+ -m - Detailed monitoring enabled true/false. Set this to either 't' or 'f' to enable or disable EC2 detailed monitoring. 
+        Example: -m f  
+
+ -b - Verbose console output. Set to 'y' for verbose console output. Note: this mode is very slow. 
+        Example: -b y  
+
+ -g - Logging on / off. Default is off. Set to 'y' to create a debug log. Note: logging mode is slower.  
+        Example: -g y  
+
+ -h - Display this message 
+        Example: -h  
+
+ ---version - Display the script version 
+        Example: --version  
+
