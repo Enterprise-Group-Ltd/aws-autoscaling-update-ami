@@ -1,0 +1,18 @@
+
+{
+  "mappings": [
+    {
+      "oldLcName": "cli-v119-2017-10-01-1542-UTC",
+      "newLcName": "cli-v120-2017-10-01-1638-UTC",
+      "oldLcArn": "arn:aws:autoscaling:us-east-1:123456789012:launchConfiguration:abcdef12-ff56-981a-e912-13h3a222aabb:launchConfigurationName/cli-v119-2017-10-01-1542-UTC",
+      "newLcArn": "arn:aws:autoscaling:us-east-1:123456789012:launchConfiguration:12345aaa-3322-4455-1a88-hhhabc123456:launchConfigurationName/cli-v120-2017-10-01-1638-UTC",
+      "oldAmiId": "ami-abcdef12",
+      "oldAmiName": "cli_v119_dev01_2017_08_22_0000_UTC",
+      "newAmiId": "ami-defgh456",
+      "newAmiName": "cli_v120_dev01_2017_08_22_0000_UTC",
+      "autoscaleGroups": [
+        "cli-test-dev01"
+      ]
+    }
+  ]
+}
