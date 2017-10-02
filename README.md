@@ -12,7 +12,8 @@ This utility can:
 * Retain X prior Launch Configuration versions  
 * Append text to the Launch Configuration name
 * Enable or disable EC2 instance detailed monitoring
-* Add a security group to all Launch Configurations    
+* Add a security group to all Launch Configurations 
+* Create a JSON mapping file for all related components, e.g. AMIs, Launch Configurations and Autoscaling Group(s)   
 
 This utility produces a summary report listing:
 
@@ -75,6 +76,7 @@ To directly execute the utility:
 ## Output
 
 * Summary report 
+* JSON mapping file for all related components, e.g. AMIs, Launch Configurations and Autoscaling Group(s)
 * Debug log (execute with the `-g y` parameter)  
   * Example: `$ bash ./autoscaling-update-ami.sh -p AWS_CLI_profile -n new_AMI_ID_or_name -t old_target_AMI_ID_or_name -a append-text -g y`  
 * Console verbose mode (execute with the `-b y` parameter)  
