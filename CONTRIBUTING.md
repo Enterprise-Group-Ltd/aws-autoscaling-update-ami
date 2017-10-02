@@ -20,7 +20,7 @@ When contributing to this repository, please first discuss the change you wish t
 
 ## Pull Request Process
 
-1. Please use the [Pull Request Template](https://github.com/Enterprise-Group-Ltd/aws-autoscaling-suspend-resume/blob/master/PULL_REQUEST_TEMPLATE.md)  
+1. Please use the [Pull Request Template](https://github.com/Enterprise-Group-Ltd/aws-autoscaling-update-ami/blob/master/PULL_REQUEST_TEMPLATE.md)  
 2. Increase the version numbers in any files and the README.md to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 
 
