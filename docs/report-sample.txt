@@ -1,0 +1,95 @@
+
+
+  ------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------
+
+  Autoscaling Update AMI Summary Report
+
+  Script Version: 1.2.23 
+
+  Date: 2017-10-02-144820
+
+  AWS Account: 123456789012  egl-sample-act 
+
+  Number of prior Launch Configuration versions to retain: 2 
+
+
+  Autoscaling Update AMI job log file: 
+  /home/ec2-user/ami-update/aws-123456789012-autoscaling-update-ami-2017-10-02-144820/ 
+  aws-123456789012-autoscaling-update-ami-v1.2.23-2017-10-02-144820-debug.log 
+
+
+  Old AMI ID: ami-abcdef12 
+  Old AMI Name: cli_v116_dev01_2017_08_22_0000_UTC 
+
+  New AMI ID: ami-defghi23 
+  New AMI Name: cli_v117_dev01_2017-10-02-1448_UTC 
+
+  Number of Launch Configurations updated: 2 
+
+  Number of Autoscaling Groups updated: 3 
+
+
+  ------------------------------------------------------------------------------------------
+
+
+  Errors:
+
+-----------------------------------------------------------------------------------------------------
+
+ Error message: 
+  An error occurred (ResourceInUse) when calling the DeleteLaunchConfiguration operation: Cannot delete launch configuration cli-a-v102-2017-08-22-0000-UTC because it is attached to AutoScalingGroup asg-utility-test-xxxx
+
+-----------------------------------------------------------------------------------------------------
+
+
+  ------------------------------------------------------------------------------------------
+
+
+  ------------------------------------------------------------------------------------------
+
+  Launch Configuration versions deleted: 
+
+    
+    cli-a-v111-2017-08-22-0000-UTC
+    cli-b-v111-2017-08-22-0000-UTC
+
+
+  ------------------------------------------------------------------------------------------
+
+
+
+  Old, target Launch Configuration Name: 
+    cli-b-v116-2017-08-22-0000-UTC 
+
+
+  New Launch Configuration Name: 
+    cli-b-v117-2017-10-02-1448-UTC 
+
+
+  Associated Autoscaling Groups updated to new Launch Configuration: 
+    EGL_telematics_cli_t2-03
+    EGL_telematics_cli_t2-04
+
+
+  ------------------------------------------------------------------------------------------
+
+
+
+  Old, target Launch Configuration Name: 
+    cli-a-v116-2017-08-22-0000-UTC 
+
+
+  New Launch Configuration Name: 
+    cli-a-v117-2017-10-02-1448-UTC 
+
+
+  Associated Autoscaling Groups updated to new Launch Configuration: 
+    EGL_telematics_cli_t2-02
+
+
+  ------------------------------------------------------------------------------------------
+
+
+  ------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------
