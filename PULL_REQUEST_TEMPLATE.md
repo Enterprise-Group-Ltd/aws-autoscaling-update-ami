@@ -24,8 +24,8 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 * AWS CLI version:
 * jq version: 
 * bash version: 
-* local Linux or EC2:
-* Distriubtion:
+* local Linux/EC2/both:
+* Distribution:
 
 # Checklist:
 
