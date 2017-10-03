@@ -8,6 +8,9 @@ Please note that we cannot merge any changes that would break these utilities in
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. 
 
+Please follow our [style guide](https://github.com/Enterprise-Group-Ltd/aws-autoscaling-update-ami/blob/master/style/shell.md) for your contributions.
+
+
 ## Contributing Process
 
 1. Fork the utility's repo   
