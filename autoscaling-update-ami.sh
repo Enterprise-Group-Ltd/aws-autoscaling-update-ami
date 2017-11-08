@@ -29,7 +29,7 @@
 # 
 # File: autoscaling-update-ami.sh
 #
-script_version=1.2.23  
+script_version=1.2.25  
 #
 #  Dependencies:
 #  - bash shell
@@ -2374,7 +2374,7 @@ fnWriteLog ${LINENO} level_0 ""
 fnWriteLog ${LINENO} level_0 "New AMI name:..........."$ami_new_name" "
 fnWriteLog ${LINENO} level_0 "New AMI ID:............."$ami_new_id" "
 fnWriteLog ${LINENO} level_0 ""
-fnWriteLog ${LINENO} level_0 "Text to append to the Launch Configuration name: "$lc_name_append_string"_clean "
+fnWriteLog ${LINENO} level_0 "Text to append to the Launch Configuration name: "$lc_name_append_string_clean""
 fnWriteLog ${LINENO} level_0 ""
 fnWriteLog ${LINENO} level_0 "Count of affected old, target Launch Configurations: "$count_lc_target" "
 fnWriteLog ${LINENO} level_0 ""
@@ -3405,7 +3405,7 @@ while read -r lc_old_names_sorted_line
     fnWriteLog ${LINENO} ""
     #
     fnWriteLog ${LINENO} "running AWS CLI ARN query for LC name: "$lc_old_names_sorted_line" "
-    feed_write_log="$(aws autoscaling describe-launch-configurations --profile dev01 --query 'LaunchConfigurations[?LaunchConfigurationName=='"\`$lc_old_names_sorted_line\`"'].{arn: LaunchConfigurationARN, lcName: LaunchConfigurationName}' > lc-old-name-arn.json  2>&1)"
+    feed_write_log="$(aws autoscaling describe-launch-configurations --profile "$cli_profile" --query 'LaunchConfigurations[?LaunchConfigurationName=='"\`$lc_old_names_sorted_line\`"'].{arn: LaunchConfigurationARN, lcName: LaunchConfigurationName}' > lc-old-name-arn.json  2>&1)"
     #
     # check for errors from the AWS API  
     if [ "$?" -ne 0 ]
@@ -6107,7 +6107,7 @@ while read -r lc_new_names_sorted_line
     fnWriteLog ${LINENO} ""
     #
     fnWriteLog ${LINENO} "running AWS CLI ARN query for LC name: "$lc_new_names_sorted_line" "
-    feed_write_log="$(aws autoscaling describe-launch-configurations --profile dev01 --query 'LaunchConfigurations[?LaunchConfigurationName=='"\`$lc_new_names_sorted_line\`"'].{arn: LaunchConfigurationARN, lcName: LaunchConfigurationName}' > lc-new-name-arn.json  2>&1)"
+    feed_write_log="$(aws autoscaling describe-launch-configurations --profile "$cli_profile" --query 'LaunchConfigurations[?LaunchConfigurationName=='"\`$lc_new_names_sorted_line\`"'].{arn: LaunchConfigurationARN, lcName: LaunchConfigurationName}' > lc-new-name-arn.json  2>&1)"
     #
     # check for errors from the AWS API  
     if [ "$?" -ne 0 ]
